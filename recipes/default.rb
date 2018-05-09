@@ -3,9 +3,12 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
+#
+# Validator.pem on Workstation C:\opscode\chefdk\embedded\lib\ruby\gems\2.4.0\gems\berkshelf-6.3.1\spec\config
+#
 powershell_script 'Set host file so the instance knows where to find chef-server' do
     code <<-EOH
-    $hosts = "34.211.143.194 chef.automate-demo.com"
+    $hosts = "18.237.52.42 chef.automate-demo.com"
     $file = "C:\\Windows\\System32\\drivers\\etc\\hosts"
     $hosts | Add-Content $file
     EOH
@@ -25,11 +28,11 @@ powershell_script 'Set host file so the instance knows where to find chef-server
     $nodeName = "lab-win-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
   
     $clientrb = @"
-  chef_server_url 'https://chef.automate-demo.com/organizations/automate'
-  validation_client_name 'validator'
-  validation_key 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\kitchen\\cookbooks\\myiis\\recipes\\validator.pem'
-  node_name '{0}'
-  "@ -f $nodeName
+chef_server_url 'https://chef.automate-demo.com/organizations/automate'
+validation_client_name 'validator'
+validation_key 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\kitchen\\cookbooks\\bjc_windows_bootstrap\\recipes\\validator.pem'
+node_name '{0}'
+"@ -f $nodeName
   
     Set-Content -Path c:\\chef\\client.rb -Value $clientrb
     EOH
@@ -40,4 +43,3 @@ powershell_script 'Set host file so the instance knows where to find chef-server
     C:\\opscode\\chef\\bin\\chef-client.bat -j C:\\chef\\first-boot.json
     EOH
   end
-

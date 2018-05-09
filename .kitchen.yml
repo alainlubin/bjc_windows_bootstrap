@@ -35,7 +35,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[myiis::server]
+      - recipe[bjc_windows_bootstrap::default]
     verifier:
       inspec_tests:
         - test/integration/default
