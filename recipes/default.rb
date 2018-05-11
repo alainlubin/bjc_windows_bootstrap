@@ -8,7 +8,7 @@
 #
 powershell_script 'Set host file so the instance knows where to find chef-server' do
     code <<-EOH
-    $hosts = "52.36.89.53 chef.automate-demo.com"
+    $hosts = "34.216.239.205 chef.automate-demo.com"
     $file = "C:\\Windows\\System32\\drivers\\etc\\hosts"
     $hosts | Add-Content $file
     EOH
@@ -29,7 +29,7 @@ powershell_script 'Set host file so the instance knows where to find chef-server
   
     $clientrb = @"
 chef_server_url 'https://chef.automate-demo.com/organizations/automate'
-validation_client_name 'validator'
+validation_client_name 'automate-validator'
 validation_key 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\kitchen\\cookbooks\\bjc_windows_bootstrap\\recipes\\validator.pem'
 node_name '{0}'
 ssl_verify_mode :verify_none
