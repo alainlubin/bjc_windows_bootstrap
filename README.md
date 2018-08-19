@@ -6,6 +6,8 @@ This cookbook uses kitchen to stand up a Windows instance in AWS for a student t
 ## Requirements
 There are 4 items that need to be updated before the Cookbook can run.
 
+UPDATE - Use internal IP address from VPC and the test Sec Group !!!
+
 ### 1. default.rb
 Update the IP address for the Chef Server
 
