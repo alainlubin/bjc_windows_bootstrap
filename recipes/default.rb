@@ -8,7 +8,7 @@
 #
 powershell_script 'Set host file so the instance knows where to find chef-server' do
     code <<-EOH
-    $hosts = "52.40.151.238 chef.automate-demo.com"
+    $hosts = "54.218.111.189 chef.automate-demo.com"
     $file = "C:\\Windows\\System32\\drivers\\etc\\hosts"
     $hosts | Add-Content $file
     EOH
