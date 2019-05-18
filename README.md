@@ -1,7 +1,7 @@
 # bjc_windows_bootstrap
 
 ## Description
-This cookbook uses kitchen to stand up a Windows instance in AWS for a student to use in the Chef InSpec Compliance Training
+This cookbook uses kitchen to stand up a Windows instance in AWS for a student to use in the Chef InSpec Compliance Training.  It is currently locked to Chef 14.
 
 ## Requirements
 There are 4 items that need to be updated before the Cookbook can run.
