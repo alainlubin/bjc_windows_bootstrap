@@ -8,7 +8,7 @@
 #
 powershell_script 'Set host file so the instance knows where to find chef-server' do
     code <<-EOH
-    $hosts = "35.162.252.143 chef.automate-demo.com"
+    $hosts = "18.237.66.146 chef.automate-demo.com"
     $file = "C:\\Windows\\System32\\drivers\\etc\\hosts"
     $hosts | Add-Content $file
     EOH
@@ -25,7 +25,7 @@ powershell_script 'Set host file so the instance knows where to find chef-server
     
   powershell_script 'Create first-boot.json2' do
     code <<-EOH
-    $nodeName = "Windows-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
+    $nodeName = "Win-Ant-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
   
     $clientrb = @"
 chef_server_url 'https://chef.automate-demo.com/organizations/automate'
