@@ -3,8 +3,8 @@ driver:
   name: ec2
   aws_ssh_key_id: chef_demo_2x
   region: us-west-2
-  security_group_ids: sg-089fa448ffb8a5903
-  subnet_id: subnet-0da543e3b6cb0f2ea
+  security_group_ids: sg-0b25db61aa0a1b487
+  subnet_id: subnet-03dfd3f8e97a2a5ff
   associate_public_ip: true
   instance_type: m3.medium ##t2.micro
   tags:
@@ -16,8 +16,9 @@ driver:
     X-Dept: "sales"
     X-Customer: "Rees"
     X-Project: "BJC-Demo"
-    X-Termination-Date: "2018-07-20T12:04:30Z"
-    X-TTL: 4
+    X-Termination-Date: "2020-07-20T12:04:30Z"
+    TTL: 20
+    X-TTL: 20
 
 transport:
     username: administrator
