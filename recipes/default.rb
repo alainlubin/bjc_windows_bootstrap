@@ -33,6 +33,7 @@ validation_client_name 'automate-validator'
 validation_key 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\kitchen\\cookbooks\\bjc_windows_bootstrap\\recipes\\validator.pem'
 node_name '{0}'
 ssl_verify_mode :verify_none
+chef_license 'accept'
 "@ -f $nodeName
   
     Set-Content -Path c:\\chef\\client.rb -Value $clientrb
