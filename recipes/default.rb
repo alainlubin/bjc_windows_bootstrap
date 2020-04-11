@@ -9,7 +9,7 @@
     
   powershell_script 'Create config.rb' do
     code <<-EOH
-    $nodeName = "Win-Ant-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
+    $nodeName = "Win2016-Ant-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
   
     $clientrb = @"
 chef_server_url 'https://#{node['environment']['automate_url']}/organizations/#{node['environment']['chef_org']}'
