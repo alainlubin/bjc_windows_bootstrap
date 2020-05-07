@@ -6,7 +6,10 @@
 #
 # Validator.pem on Workstation C:\opscode\chefdk\embedded\lib\ruby\gems\2.4.0\gems\berkshelf-6.3.1\spec\config
 #
-    
+template 'c:\waiver.yml' do
+    source 'waiver.yml.erb'
+end
+
   powershell_script 'Create config.rb' do
     code <<-EOH
     $nodeName = "Win2016-Ant-{0}" -f (-join ((65..90) + (97..122) | Get-Random -Count 4 | % {[char]$_}))
