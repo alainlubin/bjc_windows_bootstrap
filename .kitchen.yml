@@ -36,6 +36,7 @@ verifier:
 
 platforms:
   - name: windows-2016
+# - name: windows-2012r2
 
 suites:
   - name: default
