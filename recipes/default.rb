@@ -25,12 +25,7 @@ chef_license 'accept'
 "@ -f $nodeName
   
     Set-Content -Path c:\\chef\\client.rb -Value $clientrb
-    EOH
-  end
-
-  powershell_script 'Run Chef' do
-    code <<-EOH
-    ## Run Chef
     C:\\opscode\\chef\\bin\\chef-client.bat
     EOH
+    not_if { ::File.exist?('c:\chef\client.rb') }
   end
